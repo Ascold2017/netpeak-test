@@ -1,0 +1,127 @@
+.header-section {
+    background-image: url('~images/bg/Background.jpg');
+    background-size: cover;
+    background-position: center;
+    
+    position: relative;
+}
+
+.header-section__header {
+    display: flex;
+    padding-top: 25px;
+    height: 65px;
+}
+
+.header-section__logo {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 27px;
+
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.header-section__nav {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.header-section__links {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.header-section__link-item {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+
+    color: #FFFFFF;
+}
+
+.header-section__link {
+    padding: 15px;
+    text-decoration: none;
+}
+.header-section__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100vh - 65px);
+    
+}
+.header-section__container {
+    display: flex;
+}
+
+.header-section__jumbotron {
+    width: 50%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include tablets {
+        width: 100%;
+    }
+}
+
+.header-section__jumbotron-logo {
+    background: #fff;
+    width: 90px;
+    height: 90px;
+    padding: 5px;
+    border-radius: 18px;
+    margin-bottom: 33px;
+    @include tablets {
+        margin: 0 auto 33px;
+    }
+}
+
+.header-section__jumbotron-title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 50px;
+    letter-spacing: 1px;
+
+    color: #FFFFFF;
+    margin-bottom: 37px;
+    width: 95%;
+    @include tablets {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+.header-section__jumbotron-title b {
+    font-weight: 800;
+}
+.header-section__jumbotron-buttons {
+    @include tablets {
+       display: flex;
+       justify-content: center;
+    }
+}
+.header-section__jumbotron-buttons button:first-child {
+    margin-right: 20px;
+}
+
+.header-section__phone {
+    width: 50%;
+    @include tablets {
+        display: none;
+    }
+}
+
+.header-section__bottom {
+    position: absolute;
+    bottom: 0;
+    height: 15vh;
+    left: 0;
+    right: 0;
+    background: #F2F2F2;;
+}

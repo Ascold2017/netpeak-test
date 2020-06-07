@@ -1,0 +1,90 @@
+include ./mixins.pug
+
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Netpeak | AppStarter
+  body
+    section.header-section.fullscreen-section
+      .container
+        header.header-section__header
+          a(href="#").header-section__logo AppStarter
+          nav.header-section__nav
+            - var links = ['Features', 'Video Tour', 'Reviews', 'Pricing']
+            ul.header-section__links
+              each link in links
+                li.header-section__link-item
+                  a(href="#").header-section__link= link
+            button.button GET IT FREE
+        .header-section__wrapper
+          .header-section__container
+            .header-section__jumbotron
+              .header-section__jumbotron-logo
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="header-section__jumbotron-logo-icon">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M40 79.375C61.7462 79.375 79.375 61.7462 79.375 40C79.375 18.2538 61.7462 0.625 40 0.625C18.2538 0.625 0.625 18.2538 0.625 40C0.625 61.7462 18.2538 79.375 40 79.375ZM64.3374 63.8874C70.3768 57.7349 74.1016 49.3024 74.1016 40C74.1016 21.1662 58.8338 5.89844 40 5.89844C21.1662 5.89844 5.89844 21.1662 5.89844 40C5.89844 49.311 9.63003 57.7504 15.6793 63.9044L37.2754 14.7754H42.7246L64.3374 63.8874ZM59.73 67.8178L54.1504 54.8535H25.9375L20.3374 67.8656C25.8941 71.7936 32.6775 74.1016 40 74.1016C47.3521 74.1016 54.1608 71.7749 59.73 67.8178ZM28.2227 49.7559H51.9531L40.0879 22.0703L28.2227 49.7559Z" fill="url(#paint0_linear)"/>
+                  <defs>
+                    <linearGradient id="paint0_linear" x1="-38.75" y1="40" x2="40" y2="118.75" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FF8E64"/>
+                    <stop offset="1" stop-color="#FFE641"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              h1.header-section__jumbotron-title
+                | <b>AppStarter.</b> Best landing page for web and mobile apps
+            
+              .header-section__jumbotron-buttons
+                button.button.button--accent Download Now
+                button.button Watch Video
+            .header-section__phone
+              .tablet
+                .tablet__content
+        .header-section__bottom
+    section.timers-section
+      .container
+        h3.timers-section__title
+          | <b>Why</b> do we use it?
+        p.timers-section__caption
+          | This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise, she lost sight of her in a moment.
+        .timers-app#timers
+          .timers-app__container
+            .timers-app__form
+              input(type="text" placeholder="Timer Name" v-model="timerName").timers-app__form-input
+              button(@click="addTimer").button.button--accent.button--long-width Create Timer
+          hr.timers-app__divider
+          .timers-app__container
+            table.timers-app__timers-table
+              tbody
+                tr(v-for="timer in timers" :key="timer.startsAt").timers-app__timers-item
+                  td(:title="timer.name").timers-app__timers-item-name {{ timer.name }}
+                  td.timers-app__timers-item-value {{ timer.value | formatTime }}
+                  td.timers-app__timers-item-action
+                    button(
+                      class="button button--circle button--primary"
+                      @click="toggleIsPaused(timer)")
+                      <span class="mdi" :class="{ 'mdi-play': timer.isPaused, 'mdi-pause': !timer.isPaused }"></span>
+                  td.timers-app__timers-item-action
+                    button(
+                      class="button button--rounded button--danger"
+                      @click="deleteTimer(timer)")
+                      <span class="mdi mdi-delete"></span>
+    footer.footer
+      .container
+        .footer__container
+          a(href="#").footer__logo AppStarter
+          .footer__copyright
+            .footer__copyright-title
+              | Created with <span class="mdi mdi-heart"></span> by <b>Sergey Azovskiy</b>
+            .footer__copyright-caption
+              | © AppStarter, 2017
+          .footer__socials
+            a(href="#").footer__social-item
+              span.mdi.mdi-twitter
+            a(href="#").footer__social-item
+              span.mdi.mdi-facebook
+            a(href="#").footer__social-item
+              span.mdi.mdi-instagram
+
+
