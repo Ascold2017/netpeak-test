@@ -53,7 +53,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "normalize.css": "^8.0.1",
-    "pug": "^2.0.3",
+    "pug": "^3.0.1",
     "simple-vue-validator": "^0.16.0",
     "vue": "^2.6.7",
     "vue-router": "^3.0.2",
